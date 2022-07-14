@@ -15,6 +15,7 @@ body {
   height: 100%;
   width: 100%;
   padding-top: 10px;
+  color: red;
 }
 
 #app div {
@@ -63,4 +64,11 @@ button {
 .dark-button {
   background-color: rgba(0, 0, 0, 0.5);
   color: rgb(255, 255, 255);
+}
+
+
+/* Counter css */
+.counter {
+  font-size: 48px;
+  color: wheat;
 }
