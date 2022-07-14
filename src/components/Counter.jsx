@@ -14,6 +14,8 @@ export default class Counter extends React.Component {
   }
 
   // use this.setState change the value
+  // if use arrow function here ,
+  //then do not need to use bind(this) inside of the constructor.
   handleClickIncrementCounter = () => {
     this.setState({
       count: this.state.count + 1
