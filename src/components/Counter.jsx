@@ -16,24 +16,34 @@ export default class Counter extends React.Component {
   // use this.setState change the value
   // if use arrow function here ,
   //then do not need to use bind(this) inside of the constructor.
+  // handleClickIncrementCounter = () => {
+  //   this.setState({
+  //     count: this.state.count + 1
+  //   })
+  // }
+
+  //use callback function to void memory leaks
   handleClickIncrementCounter = () => {
-    this.setState({
-      count: this.state.count + 1
+    this.setState((preveState) => {
+      return { count: preveState.count + 1 }
     })
+
   }
 
   handleClickDecrementCounter = () => {
-    this.setState({
-      decrement: this.state.decrement - 1
+    this.setState((preveState) => {
+      return { count: preveState.count - 1 }
     })
   }
+
+
+
 
   render() {
     return (
       <div>
         <h3 className="counter">Increment Counter: {this.state.count}</h3>
         <button onClick={this.handleClickIncrementCounter}> Increment</button>
-        <h3 className="counter">Decrement Counter: {this.state.decrement}</h3>
         <button onClick={this.handleClickDecrementCounter} >Decrement</button>
       </div>
     )
@@ -43,3 +53,4 @@ export default class Counter extends React.Component {
 
 
 
+//<h3 className="counter">Decrement Counter: {this.state.decrement}</h3>
